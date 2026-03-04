@@ -4,7 +4,7 @@ help([[Load UFS Model common libraries]])
 
 local ufs_modules = {
   {["jasper"]          = "2.0.32"},
-  {["zlib"]            = "1.2.13"},
+  {["zlib-ng"]            = "2.1.6"},
   {["libpng"]          = "1.6.37"},
   {["hdf5"]            = "1.14.3"},
   {["netcdf-c"]        = "4.9.2"},
@@ -16,15 +16,13 @@ local ufs_modules = {
   {["crtm"]            = "2.4.0.1"},
   {["g2"]              = "3.5.1"},
   {["g2tmpl"]          = "1.13.0"},
-  {["ip"]              = "5.1.0"},
+  {["ip"]              = "5.0.0"},
   {["sp"]              = "2.5.0"},
   {["w3emc"]           = "2.10.0"},
   {["gftl-shared"]     = "1.9.0"},
-  {["mapl"]            = "2.53.0-esmf-8.6.1"},
+  {["mapl"]            = "2.46.3-esmf-8.6.1"},
   {["scotch"]          = "7.0.4"},
 }
-
-append_path("MODULEPATH", "/ncrc/proj/epic/spack-stack/c6/spack-stack-1.9.2/envs/ue-oneapi-2024.2.1/install/modulefiles/cray-mpich/8.1.32-64uo344/gcc/12.3.0")
 
 for i = 1, #ufs_modules do
   for name, default_version in pairs(ufs_modules[i]) do

@@ -5,12 +5,12 @@ help([[
 
 whatis([===[Loads libraries needed for building the UFS Weather Model on Gaea ]===])
 
-prepend_path("MODULEPATH", "/ncrc/proj/epic/spack-stack/c6/spack-stack-1.9.2/envs/ue-oneapi-2024.2.1/install/modulefiles/Core")
+prepend_path("MODULEPATH", "/ncrc/proj/epic/spack-stack/c6/spack-stack-1.8.0/envs/ue-intel-2021.10.0/install/modulefiles/Core")
 
-stack_intel_ver=os.getenv("stack_oneapi_ver") or "2024.2.1"
+stack_intel_ver=os.getenv("stack_oneapi_ver") or "2023.2.0"
 load(pathJoin("stack-oneapi", stack_oneapi_ver))
 
-stack_cray_mpich_ver=os.getenv("stack_cray_mpich_ver") or "8.1.32"
+stack_cray_mpich_ver=os.getenv("stack_cray_mpich_ver") or "8.1.29"
 load(pathJoin("stack-cray-mpich", stack_cray_mpich_ver))
 
 stack_python_ver=os.getenv("stack_python_ver") or "3.11.7"
@@ -21,7 +21,7 @@ load(pathJoin("cmake", cmake_ver))
 
 load("ufs_common")
 
-nccmp_ver=os.getenv("nccmp_ver") or "1.9.1.0"
+nccmp_ver=os.getenv("nccmp_ver") or "1.9.0.1"
 load(pathJoin("nccmp", nccmp_ver))
 
 unload("darshan-runtime")
@@ -30,4 +30,4 @@ unload("cray-libsci")
 setenv("CC","cc")
 setenv("CXX","CC")
 setenv("FC","ftn")
-setenv("CMAKE_Platform","gaea.intel")
+setenv("CMAKE_Platform","gaeac6.intel")
